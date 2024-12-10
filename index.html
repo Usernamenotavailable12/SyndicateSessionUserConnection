@@ -163,6 +163,7 @@
             query SyndicateSession($syndicateSessionId: ID!) {
               syndicateSession(syndicateSessionId: $syndicateSessionId) {
                 participants {
+                  userId
                   user {
                     nickname
                     phone(format: SIGNIFICANT)
@@ -205,6 +206,7 @@
           <table>
             <thead>
               <tr>
+                <th>User ID</th>
                 <th>Nickname</th>
                 <th>Phone</th>
                 <th>Amount</th>
@@ -213,6 +215,7 @@
             <tbody>
               ${participants.map(p => `
                 <tr>
+                  <td>${p.userId}</td>
                   <td>${p.user.nickname}</td>
                   <td>${p.user.phone}</td>
                   <td>${p.amount}</td>
