@@ -16,7 +16,7 @@
     }
     .form-container {
       width: 100%;
-      max-width: 500px;
+      max-width: 600px;
       padding: 20px;
       background: #ffffff;
       border-radius: 8px;
@@ -169,6 +169,7 @@
                     phone(format: SIGNIFICANT)
                   }
                   amount
+                  outcomeAmount
                 }
               }
             }
@@ -210,6 +211,7 @@
                 <th>Nickname</th>
                 <th>Phone</th>
                 <th>Amount</th>
+                <th>Win/Loss</th>
               </tr>
             </thead>
             <tbody>
@@ -219,6 +221,7 @@
                   <td>${p.user.nickname}</td>
                   <td>${p.user.phone}</td>
                   <td>${p.amount}</td>
+                  <td>${p.outcomeAmount - p.amount}</td>
                 </tr>
               `).join('')}
             </tbody>
